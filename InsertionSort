@@ -1,0 +1,33 @@
+import java.util.Arrays;
+public class InsertionSort {
+
+	public static void main(String[] args) {
+		int i=1;
+		int array[] = {6,5,7,9,3,6,3,8};
+		
+		while(i < array.length) {
+			System.out.println("-------");
+			int k=i-1;
+			int l = i;
+			loop_1:
+			while (k >= 0)  {
+				System.out.println(k+" - "+l);
+				if(array[l] < array[k]) {
+					int j=0;
+					j = array[k];
+					array[k] = array[l];
+					array[l] = j;
+					//k=l;
+				}
+				else {
+					break loop_1;
+				}
+				l = k;
+				k = k-1;
+			}
+			i++;
+			System.out.println(Arrays.toString(array));
+		}
+		System.out.println(Arrays.toString(array));
+	}
+}
